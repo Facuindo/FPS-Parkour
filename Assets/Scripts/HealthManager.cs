@@ -18,8 +18,12 @@ public class HealthManager : MonoBehaviour
         {
             Debug.Log("Game over");
             healthPoints = 0;
-                uiManager.UpdateHealthText(healthPoints.ToString());
+            uiManager.UpdateHealthText(healthPoints.ToString());
+            return;
         }
+
+        healthPoints += damageAmount;
+        uiManager.UpdateHealthText(healthPoints.ToString());
     }
 
 

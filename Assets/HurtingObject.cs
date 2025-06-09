@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HurtingObject : MonoBehaviour
 {
-    public int damagepoints;
+    public int damagePoints;
     public HealthManager healthManager;
 
     void Start()
@@ -16,7 +16,7 @@ public class HurtingObject : MonoBehaviour
     {
         if (collision.gameObject.name =="Player")
         {
-            damagepoints = damagepoints - 1;
+            healthManager.UpdateHealth(-damagePoints);
         }
     }
 
