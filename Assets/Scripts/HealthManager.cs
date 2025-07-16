@@ -5,11 +5,13 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public int healthPoints;
-    public UIManager uiManager;
+    public UIManager UIManager;
     // Start is called before the first frame update
     void Start()
     {
-        uiManager.UpdateHealthText(healthPoints.ToString());
+        UIManager.UpdateHealthText(healthPoints.ToString());
+        UIManager = FindObjectOfType<UIManager>();
+        UpdateHealth(0);
     }
 
     public void UpdateHealth(int damageAmount)
@@ -18,12 +20,12 @@ public class HealthManager : MonoBehaviour
         {
             Debug.Log("Game over");
             healthPoints = 0;
-            uiManager.UpdateHealthText(healthPoints.ToString());
+            UIManager.UpdateHealthText(healthPoints.ToString());
             return;
         }
 
         healthPoints += damageAmount;
-        uiManager.UpdateHealthText(healthPoints.ToString());
+        UIManager.UpdateHealthText(healthPoints.ToString());
     }
 
 

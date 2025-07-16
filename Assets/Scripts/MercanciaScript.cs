@@ -11,7 +11,6 @@ public class MercanciaScript : MonoBehaviour
     {
         moneyManager = FindObjectOfType<MoneyManager>();
     }
-
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
@@ -22,9 +21,6 @@ public class MercanciaScript : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-        }
-        {
-            Destroy(gameObject);
         }
     }
 }

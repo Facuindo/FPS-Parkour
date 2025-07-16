@@ -1,21 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoneyManager : MonoBehaviour
 {
     public float money;
     public UIManager uiManager;
-    void Start()
-    {
-        
-    }
+    public TextMeshProUGUI txtMoney;
 
-   
-    void Update()
-    {
-        
-    }
     public bool UpdateMoney (float amount)
     {
         if (money + amount < 0)
@@ -27,8 +20,8 @@ public class MoneyManager : MonoBehaviour
         else
         {
             money += amount;
+            uiManager.UpdateMoneyText(money.ToString());
             return true;
-          
         }
 
     }

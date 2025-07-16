@@ -10,9 +10,8 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        txtMoney.text = "$0";
+        txtMoney.text = "$100";
     }
-
     public void UpdateMoneyText(string moneyAmount)
     {
         txtMoney.text = "$" + moneyAmount;
@@ -20,10 +19,5 @@ public class UIManager : MonoBehaviour
     public void UpdateHealthText(string healthPoints)
    {
         txtHealth.text = "HP" + healthPoints;
-    }
-// Update is called once per frame
-void Update()
-    {
-        
     }
 }
